@@ -1,0 +1,42 @@
+showHide文件控制：
+下拉菜单.dropdown-layer的显示与隐藏效果（通过添加样式实现，所以要引入3个有关的css样式）
+凡是调用到showHide文件都必须要在css加上：.trasition{};.fadeOut{},.slideUpDownCollapse{},.slideLeftRightCollapse{}
+
+dropdown文件控制：
+通过传参列表控制 使用showhide的方式，出现的延迟，触发的方式，
+在触发下拉菜单的显示时为.dropdown添加  x(自定名称)-active 的class，从而css控制dropdown-toggle的显示样式
+传递dropdown-show/dropdown-shown/dropdown-hide/dropdown-hidden函数，分别表示下拉菜单显示之前，显示之后，隐藏之前，隐藏之后的函数
+
+
+使用dropdown自定义组件库：
+首先最外层html设置：
+class="dropdown     自定义名称x(如menu/cart)",  
+data-active="自定义名称x(如menu/cart)"   这里设置的名称将用来css控制.dropdown-toggle在下拉菜单显示时的样式
+控制显示与隐藏的按钮html设置：
+class="dropdown-toggle transition"
+下拉箭头设置：
+class="dropdown-arrow transition"
+下拉菜单部分外层html设置：
+class="dropdown-layer"
+下拉菜单内部每一小项html设置:
+class="自定义名称x-item"
+
+然后css设置:
+.dropdown{}
+x-active .dropdown-toggle{通过给前面加上"自定义名称x-active"的类控制触发时的样式}
+x-active .dropdown-arrow{通过给前面加上"自定义名称x-active"的类控制触发时的样式}
+.dropdown-layer{display:none,}
+.fadeOut {visibility: hidden !important;  opacity: 0 !important;}
+.slideUpDownCollapse {height: 0 !important;padding-top: 0 !important;padding-bottom: 0 !important;}
+.slideLeftRightCollapse {width: 0 !important;padding-left: 0 !important;padding-right: 0 !important;}
+.transition:{transition:all .5s}
+
+最后js设置：
+先依次引入jQuery.js  transition.js   showHide.js  dropdown.js   
+$('自定义名称x').dropdown({css3:true/false, js:true/false, animation:'fade'/..., delay:触发的延迟, event:'hover'/'click' })
+如果要在下拉菜单显示之前/显示完成之后/隐藏之前/隐藏之后，触发事件：
+$('自定义名称x').on('dropdown-show/dropdown-shown/dropdown-hide/dropdown-hidden',function(){触发的内容})
+比如要按需加载：$('自定义名称x').on('dropdown-show',function(){})
+
+最后，我们还可以通过.dropdown('show')和.dropdown('hide')来手动控制下拉菜单的显示与隐藏
+

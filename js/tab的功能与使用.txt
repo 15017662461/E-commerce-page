@@ -1,0 +1,32 @@
+tab使用showHide模块实现了滑过/点击相应菜单栏从而改变下方展示区展示内容
+需要调用showHide模块
+
+
+使用方法：
+html：
+最外层容器div  class = 'x自定义名称'
+包裹着所有切换按钮(点)的容器  class = 'tab-item-wrap'
+每一个切换按钮(点) class = 'tab-item'
+包裹着所有具体内容的容器   class = 'tab-body'
+每一块具体内容    class = 'tab-panel'
+
+css：
+.tab-item-active{}    控制切换按钮被选中的样式
+.tab-panel{dispaly:none}   设置每一块详细内容默认隐藏
+.transition{transition:all .5s}   动画设置
+.fadeOut {visibility: hidden !important; opacity: 0 !important;}   showHide模块必备
+
+js：
+首先，引入jquery.js    transition.js    showHide.js  tab.js
+$('.x自定义名称').tab({
+event:'mouseenter/click'   触发方式
+css3:true.false,
+js:true/false,
+animation:'fade',
+activeIndex:0/1/2/...,   默认首先出现内容的索引
+interval:0(不自动切换)/1000/...,  
+delay:0(没有延迟)
+})
+
+触发事件：
+$('').on(tab-show tab-shown tab-hide tab-hidden,function(e,type,index,elem){...});

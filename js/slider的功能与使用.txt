@@ -1,0 +1,44 @@
+slider通过引入transition.js和showHide.js，以及move.js实现了幻灯片播放，其中showHide实现淡入淡出，move实现 滑入滑出
+传参列表控制其幻灯片切换的方式
+
+使用方法：
+html：
+最外层容器(包裹住整个幻灯片组件。包括图片，按钮，圆点) class = '自定义x   slider'  
+包裹住所有图片的容器div   class = 'slider-container'
+每一张图片 class = 'slider-item'
+左右切换按钮a  class = 'slider-control  slider-control-left/slider-control-right'
+包裹住所有切换点的ol  class = 'slider-indicator-wrap'
+每一个切换点  class = 'slider-indicator'
+
+css:
+如果是淡入淡出效果：
+最外层容器.slider{width:可视区域;height:可视区域;position:relative;overflow:hidden}
+设置出现的图片对应切换点样式：.slider-indicator-active{}
+设置左右切换按钮默认隐藏：.slider-control{display:none}
+通过给每一个图片设置.slider-fade前缀设置所有图片重叠且默认样式隐藏：.slider-fade .slider-item{display:none;position:absolute;top:0;width:0}
+设置动画：transition:{transition:all .5s}
+showHide模块需要用到的   .fadeOut {visibility: hidden !important; opacity: 0 !important;}
+
+如果要幻灯片的切换是左右滑入滑出的效果：
+最外层容器.slider{width:可视区域;height:可视区域;position:relative;overflow:hidden}
+设置出现的图片对应切换点样式：.slider-indicator-active{}
+设置左右切换按钮默认隐藏：.slider-control{display:none}
+通过给每一个图片设置.slider-slide前缀让先位于可视区域的右边：.slider-slide .slider-item{position:absolute;top:0;left:100%;width:100%;height:100%}
+设置动画：transition:{transition:all .5s}
+
+
+js:
+如果是淡入淡出效果引入：jquery.js，transition.js，showHide.js，slider.js
+如果是滑入滑出效果引入：jquery.js,  transition.js,   move.js,  slider.js
+$('.自定义x').slider({
+css3:true/false,
+js:true/false.
+animation:'fade'/'slide'
+activeIndex(首先出现的图片编号):0/1/2/...,
+interval(自动切换的时间):0(不想要自动切换)/5000...,
+})
+
+如果需要在幻灯片切换之前/之后触发事件：
+$('').on('slider-show'/'slider-shown'/'slider-hide'/'slider-hidden',function(e,index,elem){
+其中e是事件，index是触发事件的元素的索引，elem是相应的事件
+})

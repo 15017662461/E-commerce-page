@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <!-- 站点导航开始 -->
+    <div class="nav-site">
+        <div class="container">
+            <ul class="fl">
+                <li class="fl"><a href="javascript:;" id="nav-site-signin" class="nav-site-login">亲，请登录</a></li>
+                <li class="fl"><a href="javascript:;" id="nav-site-signup" class="nav-site-signup link">免费注册</a></li>
+                <li class="fl"><a href="###" target="_blank" class="nav-site-mobile link">手机逛慕淘</a></li>
+            </ul>
+            <ul class="fr">
+                <li class="menu dropdown fl" data-active="menu">
+                    <a href="###" target="_blank" class="dropdown-toggle link  transition">我的慕淘<i
+                            class="dropdown-arrow icon transition">&#xe69c;</i></a>
+                    <ul class="dropdown-layer dropdown-left">
+                        <li><a href="###" target="_blank" class="menu-item">已买到的宝贝</a></li>
+                        <li><a href="###" target="_blank" class="menu-item">我的足迹</a></li>
+                    </ul>
+                </li>
+                <li class="menu dropdown fl" data-active="menu">
+                    <a href="###" target="_blank" class="dropdown-toggle link transition">收藏夹<i
+                            class="dropdown-arrow icon transition">&#xe69c;</i></a>
+                    <ul class="dropdown-layer dropdown-left">
+                        <li><a href="###" target="_blank" class="menu-item">收藏的宝贝</a></li>
+                        <li><a href="###" target="_blank" class="menu-item">收藏的店铺</a></li>
+                    </ul>
+                </li>
+                <li class="fl">
+                    <a href="###" target="_blank" class="nav-site-category link">商品分类</a>
+                </li>
+                <li class="menu dropdown fl" data-active="menu" data-load="js/dropdown-seller.json">
+                    <a href="###" target="_blank" class="dropdown-toggle link transition">卖家中心<i
+                            class="dropdown-arrow icon transition">&#xe69c;</i></a>
+                    <ul class="dropdown-layer dropdown-left">
+                        <li class="dropdown-loading"></li>
+                        <!--  <li><a href="###" target="_blank" class="menu-item">免费开店</a></li>
+						<li><a href="###" target="_blank" class="menu-item">已卖出的宝贝</a></li>
+						<li><a href="###" target="_blank" class="menu-item">出售中的宝贝</a></li>
+						<li><a href="###" target="_blank" class="menu-item">卖家服务市场</a></li>
+						<li><a href="###" target="_blank" class="menu-item">卖家培训中心</a></li>
+						<li><a href="###" target="_blank" class="menu-item">体验中心</a></li> -->
+                    </ul>
+                </li>
+                <li class="nav-site-service menu dropdown fl" data-active="menu">
+                    <a href="###" target="_blank" class="dropdown-toggle link transition">联系客服<i
+                            class="dropdown-arrow icon transition">&#xe69c;</i></a>
+                    <ul class="dropdown-layer dropdown-right">
+                        <li><a href="###" target="_blank" class="menu-item">消费者客服</a></li>
+                        <li><a href="###" target="_blank" class="menu-item">卖家客服</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 站点导航结束 -->
+    <!--  header开始-->
+    <div class="header">
+        <div class="container">
+            <h1 class="fl"><a href="./index.html" class="header-logo text-hidden">慕课网</a></h1>
+            <div id="header-search" class="search fl">
+                <form action="https://s.taobao.com/search" class="search-form">
+                    <input type="text" name="q" placeholder="灵魂美食1元抢" autocomplete="off" class="search-inputbox fl">
+                    <input type="submit" value="搜索" class="search-btn fl">
+                </form>
+                <ul class="search-layer">
+                    <!-- <li class="search-layer-item text-ellipsis">111</li>
+                <li class="search-layer-item text-ellipsis">111</li>
+                <li class="search-layer-item text-ellipsis">111</li> -->
+                </ul>
+            </div>
+            <div id="cart" class="cart fr dropdown" data-active="cart" data-load="js/cart.json">
+                <a href="###" target="_blank" class="dropdown-toggle transition">
+                    <i class="icon cart-logo">&#xe60a;</i><span class="cart-text">购物车</span><span
+                        class="cart-vline text-hidden">竖线</span><span class="cart-num">0</span><i
+                        class="icon dropdown-arrow transition">&#xe69c;</i>
+                </a>
+                <div class="cart-spacer"></div>
+                <div class="dropdown-layer dropdown-right">
+                    <div class="dropdown-loading"></div>
+                    <!-- 没有商品开始 -->
+                    <!-- <div class="cart-nogoods">
+                    <i class="icon cart-nogoods-icon fl">&#xe602;</i>
+                    <div class="cart-nogoods-text fl">
+                        购物车里还没有商品
+                        <br>
+                        赶紧去选购吧！
+                    </div>
+                </div> -->
+                    <!-- 没有商品结束 -->
+
+                    <!-- 有商品开始  产品文字过长省略 \链接效果-->
+                    <!-- <h4 class="cart-title">最新加入的商品</h4>
+                <ul class="cart-list">
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/1.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">adidas 阿迪达斯 训练 男子</a></p>
+                            <p class="cart-item-price"><strong>￥335 × 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/2.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">玉兰油多效修护三部曲套装</a></p>
+                            <p class="cart-item-price"><strong>￥199 x 2</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/3.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">Apple iPhone 7 (A1660)</a></p>
+                            <p class="cart-item-price"><strong>￥6188 x 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/4.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">飞利浦面条机 HR2356/31</a></p>
+                            <p class="cart-item-price"><strong>￥659 x 4</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/5.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">罗技G29 力反馈游戏方向</a></p>
+                            <p class="cart-item-price"><strong>￥2999 x 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/1.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">adidas 阿迪达斯 训练 男子</a></p>
+                            <p class="cart-item-price"><strong>￥335 × 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/2.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">玉兰油多效修护三部曲套装</a></p>
+                            <p class="cart-item-price"><strong>￥199 x 2</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/3.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">Apple iPhone 7 (A1660)</a></p>
+                            <p class="cart-item-price"><strong>￥6188 x 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/4.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">飞利浦面条机 HR2356/31</a></p>
+                            <p class="cart-item-price"><strong>￥659 x 4</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                    <li class="cart-item">
+                        <a href="###" target="_blank" class="cart-item-pic fl"><img src="img/cart/5.png" alt=""></a>
+                        <div class="fl">
+                            <p class="cart-item-name text-ellipsis"><a href="###" target="_blank" class="link">罗技G29 力反馈游戏方向</a></p>
+                            <p class="cart-item-price"><strong>￥2999 x 1</strong></p>
+                        </div>
+                        <a href="javascript:;" title="删除" class="cart-item-delete link fr">X</a>
+                    </li>
+                </ul>
+                <div class="cart-info">
+                    <span class="fl">共 <strong class="cart-total-num">0</strong> 件商品  共计<strong class="cart-total-price">￥ 0.00</strong></span>
+                    <a href="###" target="_blank" class="cart-info-btn btn fr">去购物车</a>
+                </div> -->
+                    <!-- 有商品结束 -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  header结束-->
+    <!--  nav-main开始-->
+    <div class="nav-main">
+        <div class="container">
+            <a href="###" target="_blank" class="link">数码城</a><a href="###" target="_blank" class="link">天黑黑</a><a
+                href="###" target="_blank" class="link">团购</a><a href="###" target="_blank" class="link">发现</a><a
+                href="###" target="_blank" class="link">二手特价</a><a href="###" target="_blank" class="link">名品汇</a>
+        </div>
+    </div>
+    <!--  nav-main结束-->
+    <!-- focus开始 -->
+    <div class="focus">
+        <div class="container">
+            <div class="category fl" id="focus-category">
+                <a href="###" target="_blank" class="category-title"><i class="icon">&#xe9a6;</i>商品分类</a>
+                <ul class="category-list">
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-1.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">家用电器</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-2.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">手机</a><a href="###" target="_blank"
+                                class="dropdown-link">运营商</a><a href="###" target="_blank" class="dropdown-link">数码</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-3.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">电脑</a>、<a href="###" target="_blank"
+                                class="dropdown-link">办公</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-4.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">家居</a>、<a href="###" target="_blank"
+                                class="dropdown-link">家具</a>、<a href="###" target="_blank"
+                                class="dropdown-link">家装</a>、<a href="###" target="_blank" class="dropdown-link">厨具</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-5.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">男装</a>、<a href="###" target="_blank"
+                                class="dropdown-link">女装</a>、<a href="###" target="_blank"
+                                class="dropdown-link">童装</a>、<a href="###" target="_blank" class="dropdown-link">内衣</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-6.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">化妆</a>、<a href="###" target="_blank"
+                                class="dropdown-link">清洁</a>、<a href="###" target="_blank" class="dropdown-link">宠物</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-7.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">运动户外</a>、<a href="###" target="_blank"
+                                class="dropdown-link">钟表</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-8.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">汽车</a>、<a href="###" target="_blank"
+                                class="dropdown-link">汽车用品</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-9.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">母婴</a>、<a href="###" target="_blank"
+                                class="dropdown-link">玩具乐器</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-10.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">食品</a>、<a href="###" target="_blank"
+                                class="dropdown-link">酒类</a>、<a href="###" target="_blank"
+                                class="dropdown-link">生鲜</a>、<a href="###" target="_blank" class="dropdown-link">特产</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-11.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">医药保健</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-12.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">图书</a>、<a href="###" target="_blank"
+                                class="dropdown-link">音像</a>、<a href="###" target="_blank" class="dropdown-link">电子书</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-13.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">彩票</a>、<a href="###" target="_blank"
+                                class="dropdown-link">旅行</a>、<a href="###" target="_blank"
+                                class="dropdown-link">充值</a>、<a href="###" target="_blank" class="dropdown-link">票务</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                    <li class="dropdown" data-active="category" data-load="js/category-detail-14.json">
+                        <div class="dropdown-toggle">
+                            <a href="###" target="_blank" class="dropdown-link">理财</a>、<a href="###" target="_blank"
+                                class="dropdown-link">众筹</a>、<a href="###" target="_blank"
+                                class="dropdown-link">白条</a>、<a href="###" target="_blank" class="dropdown-link">保险</a>
+                            <i class="dropdown-arrow">&gt;</i>
+                        </div>
+                        <div class="dropdown-layer">
+                            <div class="dropdown-loading"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="slider fl" id="focus-slider">
+                <div class="container">
+                    <div class="slider-item"><a href="#" target=_blank><img src="img/focus-slider/loading.gif" alt=""
+                                class="slider-img" data-src="img/focus-slider/1.png"></a></div>
+                    <div class="slider-item"><a href="#" target=_blank><img src="img/focus-slider/loading.gif" alt=""
+                                class="slider-img" data-src="img/focus-slider/2.png"></a></div>
+                    <div class="slider-item"><a href="#" target=_blank><img src="img/focus-slider/loading.gif" alt=""
+                                class="slider-img" data-src="img/focus-slider/3.png"></a></div>
+                    <div class="slider-item"><a href="#" target=_blank><img src="img/focus-slider/loading.gif" alt=""
+                                class="slider-img" data-src="img/focus-slider/4.png"></a></div>
+                </div>
+                <ol class="slider-indicator-wrap">
+                    <li class="slider-indicator fl text-hidden">1</li>
+                    <li class="slider-indicator fl text-hidden">2</li>
+                    <li class="slider-indicator fl text-hidden">3</li>
+                    <li class="slider-indicator fl text-hidden">4</li>
+                </ol>
+                <a href="javascript:;" class="slider-control slider-control-right">&gt;</a>
+                <a href="javascript:;" class="slider-control slider-control-left">&lt;</a>
+            </div>
+            <div class="focus-sidebar fr">
+                <div class="focus-news">
+                    <div class="focus-news-head">
+                        <h2 class="focus-news-title fl">慕快报</h2>
+                        <a href="###" target="_blank" class="link fr">更多&gt;</a>
+                    </div>
+                    <div class="focus-news-body">
+                        <p class="text-ellipsis">
+                            <a href="###" target="_blank" class="link"><strong>[特惠]</strong> 精选图书每满150减50</a>
+                        </p>
+                        <p class="text-ellipsis">
+                            <a href="###" target="_blank" class="link"><strong>[公告]</strong> 因广州图书仓半仓省级配送延长的公告</a>
+                        </p>
+                        <p class="text-ellipsis">
+                            <a href="###" target="_blank" class="link"><strong>[特惠]</strong> 爆款手机12期免息 抽奖赢电视</a>
+                        </p>
+                        <p class="text-ellipsis">
+                            <a href="###" target="_blank" class="link"><strong>[公告]</strong> 广东、福建受台风影响配送延长的公告</a>
+                        </p>
+                        <p class="text-ellipsis">
+                            <a href="###" target="_blank" class="link"><strong>[特惠]</strong> 大闸蟹领券 满399减180</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="focus-service cf">
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe618;</i>
+                        <span class="focus-service-text">话费</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe71c;</i>
+                        <span class="focus-service-text">机票</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe609;</i>
+                        <span class="focus-service-text">电影票</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe600;</i>
+                        <span class="focus-service-text">游戏</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe603;</i>
+                        <span class="focus-service-text">彩票</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe63d;</i>
+                        <span class="focus-service-text">加油卡</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe691;</i>
+                        <span class="focus-service-text">酒店</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe607;</i>
+                        <span class="focus-service-text">火车票</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe634;</i>
+                        <span class="focus-service-text">众筹</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe60f;</i>
+                        <span class="focus-service-text">理财</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe65c;</i>
+                        <span class="focus-service-text">礼品卡</span>
+                    </a>
+                    <a href="###" target="_blank" class="fl focus-service-item">
+                        <i class="icon focus-service-icon">&#xe657;</i>
+                        <span class="focus-service-text">白条</span>
+                    </a>
+                </div>
+                <div class="focus-ad"></div>
+            </div>
+        </div>
+    </div>
+    <!-- focus结束 -->
+    <!-- todays开始 -->
+    <div class="todays">
+        <div class="container">
+            <div class="slider" id="todays-slider">
+                <div class="slider-container">
+                    <div class="slider-item">
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/1.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/2.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/3.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/4.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/5.png"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/6.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/7.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/8.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/9.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/10.png"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/11.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/3.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/5.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/4.png"></a>
+                        <a href="###" target="_blank" class="fl"><img src="img/todays-slider/loading.gif" alt="" class="slider-img"
+                                data-src="img/todays-slider/2.png"></a>
+                    </div>
+                </div>
+                <a href="javascript:;" class="slider-control slider-control-left">&lt;</a>
+                <a href="javascript:;" class="slider-control slider-control-right">&gt;</a>
+            </div>
+        </div>
+    </div>
+    <!-- todays结束 -->
+
+    <!-- floor开始 -->
+    <!-- floor1 -->
+    <div class="floor">
+        <div class="container">
+            <img src="img/floor-loading.gif" alt="">
+
+        </div>
+    </div>
+
+    <!-- floor2 -->
+    <div class="floor">
+        <div class="container">
+            <img src="img/floor-loading.gif" alt="">
+            
+        </div>
+    </div>
+
+    <!-- floor3 -->
+    <div class="floor">
+        <div class="container">
+            <img src="img/floor-loading.gif" alt="">
+            
+        </div>
+    </div>
+
+    <!-- floor4 -->
+    <div class="floor">
+        <div class="container">
+            <img src="img/floor-loading.gif" alt="">
+            
+        </div>
+    </div>
+
+    <!-- floor5 -->
+    <div class="floor floor-last">
+        <div class="container">
+            <img src="img/floor-loading.gif" alt="">
+            
+        </div>
+    </div>
+    <!-- floor结束 -->
+
+    <!-- elevator开始 -->
+    <div id="elevator" class="elevator container">
+        <a href="javascript:;" class="elevator-item">
+            <span class="elevator-num">F1</span>
+            <span class="elevator-text">服饰</span>
+        </a>
+        <a href="javascript:;" class="elevator-item">
+            <span class="elevator-num">F2</span>
+            <span class="elevator-text">美妆</span>
+        </a>
+        <a href="javascript:;" class="elevator-item">
+            <span class="elevator-num">F3</span>
+            <span class="elevator-text">手机</span>
+        </a>
+        <a href="javascript:;" class="elevator-item">
+            <span class="elevator-num">F4</span>
+            <span class="elevator-text">家电</span>
+        </a>
+        <a href="javascript:;" class="elevator-item">
+            <span class="elevator-num">F5</span>
+            <span class="elevator-text">数码</span>
+        </a>
+    </div>
+    <!--elevator结束  -->
+    <!-- 站点底部开始 -->
+    <div id="helper" class="helper-wrap">
+        <div class="container">
+            <!-- <img src="img/helper-loading.gif" alt=""> -->
+            <dl class="helper fl">
+                <dt class="helper-title">消费者保障</dt>
+                <dd class="helper-content">
+                    <a href="###" class="helper-item">保障范围</a
+                    ><a href="###" class="helper-item">退货退款流程</a
+                    ><a href="###" class="helper-item">服务中心</a
+                    ><a href="###" class="helper-item">更多特色服务</a>
+                </dd>
+            </dl>
+            <dl class="helper fl">
+                <dt class="helper-title">新手上路</dt>
+                <dd class="helper-content">
+                    <a href="###" class="helper-item">新手专区</a
+                    ><a href="###" class="helper-item">消费警示</a
+                    ><a href="###" class="helper-item">交易安全</a
+                    ><a href="###" class="helper-item">24小时在线帮助</a
+                    ><a href="###" class="helper-item">免费开店</a>
+                </dd>
+            </dl>
+            <dl class="helper fl">
+                <dt class="helper-title">付款方式</dt>
+                <dd class="helper-content">
+                    <a href="###" target="_blank" class="helper-item">快捷支付</a
+                    ><a href="###" target="_blank" class="helper-item">信用卡</a
+                    ><a href="###" target="_blank" class="helper-item">余额包</a
+                    ><a href="###" target="_blank" class="helper-item">蜜蜂花啊</a
+                    ><a href="###" target="_blank" class="helper-item">货到付款</a>
+                </dd>
+            </dl>
+            <dl class="helper fl">
+                <dt class="helper-title">慕淘特色</dt>
+                <dd class="helper-content">
+                    <a href="###" target="_blank" class="helper-item">手机慕淘</a
+                    ><a href="###" target="_blank" class="helper-item">慕淘信</a
+                    ><a href="###" target="_blank" class="helper-item">大众评审</a
+                    ><a href="###" target="_blank" class="helper-item">B格指南</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="footer" class="footer">
+        <div class="container">
+            <!-- <img src="img/footer-loading.gif" alt="" /> -->
+            <p class="footer-link-wrap">
+                <a href="###" target="_blank" class="footer-link">关于慕淘</a
+                ><a href="###" target="_blank" class="footer-link">合作伙伴</a
+                ><a href="###" target="_blank" class="footer-link">营销中心</a
+                ><a href="###" target="_blank" class="footer-link">廉正举报</a
+                ><a href="###" target="_blank" class="footer-link">联系客服</a
+                ><a href="###" target="_blank" class="footer-link">开放平台</a
+                ><a href="###" target="_blank" class="footer-link">诚征英才</a
+                ><a href="###" target="_blank" class="footer-link">联系我们</a
+                ><a href="###" target="_blank" class="footer-link">网站地图</a
+                ><a href="###" target="_blank" class="footer-link">法律声明</a
+                ><a href="###" target="_blank" class="footer-link">知识产权</a>
+            </p>
+            <p>© 2020 imooc.com All Rights Reserved</p>
+        </div>
+    </div>
+    <!-- 站点底部结束 -->
+    <!-- toolbar开始 -->
+    <div class="toolbar">
+        <a href="javascript:;" class="toolbar-item">
+            <i class="toolbar-icon icon">&#xe601;</i>
+            <span class="toolbar-text transition">会员</span>
+        </a>
+        <a href="javascript:;" class="toolbar-item">
+            <i class="toolbar-icon icon">&#xe73c;</i>
+            <span class="toolbar-text transition">购物车</span>
+        </a>
+        <a href="javascript:;" class="toolbar-item">
+            <i class="toolbar-icon icon">&#xe61c;</i>
+            <span class="toolbar-text transition">我的关注</span>
+        </a>
+        <a href="javascript:;" class="toolbar-item">
+            <i class="toolbar-icon icon">&#xe617;</i>
+            <span class="toolbar-text transition">我的消息</span>
+        </a>
+        <a href="javascript:;" id="backToTop" class="toolbar-item">
+            <i class="toolbar-icon icon">&#xe620;</i>
+            <span class="toolbar-text transition">顶部</span>
+        </a>
+
+    </div>
+    <!-- toolbar结束 -->
+
+
+
+    <!-- <script srsrc="img/floor/loading.gif" data-c="js/jquery.js"></script> 引用本地jquery.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> cdn引用方法-->
+    <script>
+        //两种判断是否有jquery库的写法：
+        // window.jQuery || document.write('<script src="js/jquery.js"><' + '/script>')
+        window.jQuery || document.write('<script src="js/jquery.js"><\/script>');
+    </script>
+    <script src="js/transition.js"></script>
+    <script src="js/showHide.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
