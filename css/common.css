@@ -198,6 +198,7 @@ a.link:hover {
 
 .search-layer {
     position: absolute;
+    z-index: 2;
     top: 100%;
     left: -1px;
     width: 100%;
