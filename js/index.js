@@ -257,7 +257,7 @@
     }
 
 
-    // foucs-slider
+    // focus-slider
     var slider = {};
     slider.$focusSlider = $('#focus-slider');
 
