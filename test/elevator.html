@@ -91,22 +91,21 @@
         var $box = $('.box');
         var $ele = $('.elevator');
         var $eleItem = $('.elevator-item');
-        var box = document.getElementsByClassName('box');
 
         function init() {
-            $btn.hide();
             setFloor();
+            $btn.hide();
         }
 
         $win.on('scroll', function (e) {
             if ($win.scrollTop() >= 50) {
                 $btn.fadeIn();
-                // $ele.fadeIn();
             } else {
                 $btn.fadeOut();
-                // $ele.fadeOut();
             }
+
             setFloor();
+
         });
 
         $btn.on('click', function (e) {
@@ -125,12 +124,10 @@
 
         function whichFloor() {
             var num = -1;
-            for (prop in box) {
-                if (box[prop].offsetTop) {
-                    if (box[prop].offsetTop > $win.scrollTop() + $win.height() / 2) {
-                        var num = prop - 1;
-                        break;
-                    }
+            for (var i = 0; i < $box.length; i++) {
+                if ($box.eq(i).offset().top > $win.height() / 2 + $win.scrollTop()) {
+                    var num = i - 1;
+                    break;
                 }
             }
             return num
@@ -139,13 +136,13 @@
         function setFloor() {
             var num = whichFloor();
             // console.log(num);
-            $eleItem.removeClass('look');
+            $eleItem.removeClass('look')
             $eleItem.eq(num).addClass('look');
         };
 
-        window.onload = function () {
-            init();
-        };
+
+
+        init();
     </script>
 </body>
 

@@ -1,0 +1,27 @@
+[1mdiff --git a/test/elevator.html b/test/elevator.html[m
+[1mindex f0890d7..73f1dfd 100644[m
+[1m--- a/test/elevator.html[m
+[1m+++ b/test/elevator.html[m
+[36m@@ -91,22 +91,17 @@[m
+         var $box = $('.box');[m
+         var $ele = $('.elevator');[m
+         var $eleItem = $('.elevator-item');[m
+[31m-        var box = document.getElementsByClassName('box');[m
+ [m
+         function init() {[m
+             setFloor();[m
+[31m-            // $ele.hide();[m
+             $btn.hide();[m
+[31m-            // $eleItem.removeClass('look');[m
+         }[m
+ [m
+         $win.on('scroll', function (e) {[m
+             if ($win.scrollTop() >= 50) {[m
+                 $btn.fadeIn();[m
+[31m-                // $ele.fadeIn();[m
+             } else {[m
+                 $btn.fadeOut();[m
+[31m-                // $ele.fadeOut();[m
+             }[m
+ [m
+             setFloor();[m
