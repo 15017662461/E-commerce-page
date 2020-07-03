@@ -1005,7 +1005,7 @@
             $elem.html(html);
             $elem.find('li').on('click', function () {
                 // location.href=`test.html?src=${$(this).find('.floor-img').attr('src')}&name=${$(this).find('.link').text()}&price=${$(this).find('.floor-item-price').text()}`;
-                window.open(`test.html?src=${$(this).find('.floor-img').attr('src')}&name=${$(this).find('.link').text()}&price=${$(this).find('.floor-item-price').text()}`);
+                window.open(`test.html?src=${$(this).find('.floor-img').data('src')}&name=${$(this).find('.link').text()}&price=${$(this).find('.floor-item-price').text()}`);
                 // console.log($(this).find('.floor-img').attr('src'));
                 // console.log($(this).find('.link').text());
                 // console.log($(this).find('.floor-item-price').text());
