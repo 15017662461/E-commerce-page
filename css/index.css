@@ -288,6 +288,7 @@
 	width: 200px;
 	height: 232px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .floor-item:hover {

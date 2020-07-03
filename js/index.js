@@ -21,7 +21,7 @@
         }
         setTimeout(function () {
             $elem.find('.dropdown-layer').html(html);
-        },500)
+        }, 500)
 
     };
 
@@ -158,8 +158,8 @@
             html += '</dd></dl>';
         }
         setTimeout(function () {
-        $elem.find('.dropdown-layer').html(html);
-        },800);
+            $elem.find('.dropdown-layer').html(html);
+        }, 800);
 
     };
 
@@ -175,6 +175,10 @@
             });
         }
     };
+    // 购物车信息
+    // dropdown.loadCart = function($elem,success){
+    //  $.ajax(url:,dataType:,success:success($elem,data));
+    // }
 
     // imgLoader
     var imgLoader = {};
@@ -184,7 +188,9 @@
             if (typeof imgFailed === 'function') imgFailed(url);
         }
         image.onload = function () {
+            // 在设置好image对象的src属性后，还需要设置$img的src属性才能使得图片在页面上显示出来，否则是无效的
             if (typeof imgLoaded === 'function') imgLoaded(url);
+            // console.log(1);
         };
         // image.src=url;     
         setTimeout(function () {
@@ -195,7 +201,7 @@
     imgLoader.loadImgs = function ($imgs, success, fail) {
         // var $imgs=$(elelm).find('.floor-img');          
 
-        $imgs.each(function (_, el) { // _ 相当占位，不使用该参数。
+        $imgs.each(function (index, el) { // _ 相当占位，不使用该参数。
             var $img = $(el);
             imgLoader.loadImg($img.data('src'), function (url) {
                 $img.attr('src', url);
@@ -221,10 +227,11 @@
             // totalItemNum = $floor.length,
             loadItemFn = null,
             $elem = options.$container,
-            id = options.id
+            id = options.id;
         // 什么时候开始加载
         $elem.on(options.triggerEvent, loadItemFn = function (e, index, elem) {
-            // console.log(1);
+            // 这里index，elem是on内置的对象，分别代表对应的索引值和dom节点
+            // console.log(index);
             if (items[index] !== 'loaded') {
                 $elem.trigger(id + '-loadItem', [index, elem, function () {
                     items[index] = 'loaded';
@@ -232,7 +239,7 @@
                     loadedItemNum++;
                     // console.log(index + ': loaded');
                     if (loadedItemNum === options.totalItemNum) {
-                        // 全部加载完毕
+                        // 全部加载完毕，触发事件取消事件的绑定
                         $elem.trigger(id + '-itemsLoaded');
                     }
                 }]);
@@ -996,6 +1003,13 @@
         success();
         setTimeout(function () {
             $elem.html(html);
+            $elem.find('li').on('click', function () {
+                // location.href=`test.html?src=${$(this).find('.floor-img').attr('src')}&name=${$(this).find('.link').text()}&price=${$(this).find('.floor-item-price').text()}`;
+                window.open(`test.html?src=${$(this).find('.floor-img').attr('src')}&name=${$(this).find('.link').text()}&price=${$(this).find('.floor-item-price').text()}`);
+                // console.log($(this).find('.floor-img').attr('src'));
+                // console.log($(this).find('.link').text());
+                // console.log($(this).find('.floor-item-price').text());
+            });
             lazyLoad.loadUntil({
                 $container: $elem,
                 totalItemNum: $elem.find('.floor-img').length,

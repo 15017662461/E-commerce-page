@@ -25,7 +25,7 @@ class="自定义名称x-item"
 .dropdown{}
 x-active .dropdown-toggle{通过给前面加上"自定义名称x-active"的类控制触发时的样式}
 x-active .dropdown-arrow{通过给前面加上"自定义名称x-active"的类控制触发时的样式}
-.dropdown-layer{display:none,}
+.dropdown-layer{display:none,overflow：hidden(这个主要是给slideUpDown使用的)}
 .fadeOut {visibility: hidden !important;  opacity: 0 !important;}
 .slideUpDownCollapse {height: 0 !important;padding-top: 0 !important;padding-bottom: 0 !important;}
 .slideLeftRightCollapse {width: 0 !important;padding-left: 0 !important;padding-right: 0 !important;}
